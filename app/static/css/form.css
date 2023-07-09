@@ -1,0 +1,230 @@
+.block-form {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    margin: 100px auto;
+    background: white;
+    border-radius: 4px;
+    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+}
+
+form {
+    padding: 10px;
+}
+
+.block-form h2 {
+    color: #000;
+    letter-spacing: normal;
+    margin: 20px 10px;
+    text-align: center;
+}
+
+input[type="submit"] {
+    background-color: rgb(84, 105, 212);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+                rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+                rgb(84, 105, 212) 0px 0px 0px 1px,
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+                rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.45s;
+}
+
+input[type="submit"]:hover {
+    background-color: #425094;   
+}
+
+input, select {
+    font-size: 16px;
+    line-height: 28px;
+    padding: 8px 16px;
+    width: 100%;
+    min-height: 44px;
+    border: unset;
+    border-radius: 4px;
+    outline-color: rgb(84 105 212 / 0.5);
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
+                rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+
+select:required:invalid {
+    color: gray;
+}
+
+option[value=''] {
+    display: none;
+}
+
+/* Block result */
+
+.block-result {
+    margin: 30px auto;
+    width: 100%;
+    padding: 5%;
+}
+
+.result-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 10px 0;
+}
+
+.result-text p {
+    margin: 0;
+}
+
+.result-text-result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result-text-result h2{
+    color: #292929;
+    font-size: 42px;
+    margin: 0;
+}
+
+.result-circle {
+    background-color: #455151;
+    /* #b1bbba */
+    /* #687474 */
+    /* #455151 */
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    margin: 0 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-circle img{
+    max-width: 24px;
+    height: auto;
+}
+
+.block-form img {
+    width: 100%;
+    height: auto;
+}
+
+/* Hints */
+
+.custom-datalist {
+    border: unset;
+    border-radius: 4px;
+    position: absolute;
+    display: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.custom-datalist span {
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.custom-datalist span:hover {
+    background-color: #eaeaf5;
+}
+
+/* Scrollbar */
+
+.custom-datalist::-webkit-scrollbar {
+    width: 10px;
+}
+
+.custom-datalist::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: #f0f2fa;
+}
+  
+.custom-datalist::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #425094;
+}
+
+/* Span */
+
+.custom-datalist span {
+    line-height: 150%;
+}
+
+/* Responsive design */
+
+@media (max-width: 1800px) {
+    .block-form {
+        width: 30%;
+    }
+
+    .info-block {
+        width: 30%;
+    }
+}
+
+@media (max-width: 1700px) {
+    .block-form {
+        width: 40%;
+    }
+
+    .info-block {
+        width: 40%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .block-form {
+        width: 50%;
+    }
+
+    .info-block {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1030px) {
+    .block-form {
+        width: 70%;
+    }
+
+    .info-block {
+        width: 70%;
+    }
+
+    .block-form .form-text{
+        text-align: center;
+        margin: 0 10px 0 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .block-form {
+        width: 90%;
+    }
+
+    .info-block {
+        width: 90%;
+    }
+    .info-block p{
+        font-size: 14px;
+        text-align: left;
+    }
+
+}

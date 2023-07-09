@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="static/css/feedback.css">
+{% endblock %}
+
+{% block title %} Зворотній зв'язок {% endblock %}
+
+
+{% block main %}
+
+<div class="container-feedback">
+    <h2>Зворотній зв'язок</h2>
+</div>
+<div class="feedback-form">
+
+    <form method="POST" action="/feedback" autocomplete="on">
+        <p>Для надсилання нам повідомлення, заповніть форму нижче:</p>
+        {{ form.hidden_tag() }}
+        <div class="form-data">
+            <div class="form-left">
+                <p class="form-name">{{ form.name(placeholder="Ваше ім'я") }}</p>
+                <p class="form-email">{{ form.email(placeholder="Ваш Email") }}</p>
+            </div>
+            <div class="form-right">
+                {{ form.text(placeholder="Повідомлення") }}
+            </div>
+
+        </div>
+        <div class="form-bottom">
+            {% for mes in get_flashed_messages() %}
+            <div class="flash">
+                <span>{{ mes }}</span>
+            </div>
+            {% endfor %}
+            
+            <input type="submit" value="Надіслати">
+        </div>
+
+
+
+    </form>
+</div>
+{% endblock %}

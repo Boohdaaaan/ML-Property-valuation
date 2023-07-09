@@ -1,0 +1,182 @@
+.container-feedback {
+    width: 40%;
+    margin: 30px auto 20px;
+}
+
+.container-feedback h2 {
+    font-size: 36px;
+    color: #111;
+}
+
+.feedback-form {
+    background-color: #ffffff;
+    width: 40%;
+    height: 370px;
+    margin: 10px auto 0 auto;
+    border: solid 1px #dbdbdb;
+}
+
+.feedback-form form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.feedback-form p {
+    margin: 0 0 22px 0;
+}
+
+.form-data {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 0 20px 0;
+}
+
+.form-left,
+.form-right {
+    width: 45%;
+    min-height: 100%;
+}
+
+.form-name {
+    margin: 0 0 40px 0;
+}
+
+.form-email {
+    margin: 0
+}
+
+.feedback-form input {
+    font-size: 16px;
+    line-height: 34px;
+    padding: 8px 16px;
+    width: 100%;
+    min-height: 44px;
+    border: unset;
+    border-radius: 4px;
+    outline-color: rgb(84 105 212 / 0.5);
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(60, 66, 87, 0.16) 0px 0px 0px 1px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+
+}
+
+.feedback-form input[type="submit"] {
+    background-color: rgb(84, 105, 212);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+        rgb(84, 105, 212) 0px 0px 0px 1px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    width: 200px;
+    margin-left: auto;
+    transition: 0.45s;
+    display: inline-block;
+}
+
+.feedback-form [type="submit"]:hover {
+    background-color: rgb(66, 80, 148);
+}
+
+.feedback-form textarea {
+    resize: none;
+    font-size: 16px;
+    line-height: 34px;
+    padding: 8px 16px;
+    min-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    border: unset;
+    border-radius: 4px;
+    outline-color: rgb(84 105 212 / 0.5);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(60, 66, 87, 0.16) 0px 0px 0px 1px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+        rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+}
+
+.form-bottom {
+    width: 100%;
+    display: flex;
+}
+
+.flash {
+    color: #155724;
+    background-color: #d4edda;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    width: 45%;
+}
+
+@media (max-width: 1800px) {
+    .feedback-form {
+        width: 50%;
+    }
+
+    .container-feedback {
+        width: 50%;
+    }
+}
+
+@media (max-width: 1600px) {
+    .feedback-form {
+        width: 60%;
+    }
+
+    .container-feedback {
+        width: 60%;
+    }
+}
+
+/* Responsive design */
+
+@media (max-width: 1500px) {
+    .feedback-form {
+        width: 70%;
+    }
+
+    .container-feedback {
+        width: 70%;
+    }
+}
+
+@media (max-width: 760px) {
+    .feedback-form {
+        width: 90%;
+    }
+
+    .container-feedback {
+        width: 90%;
+    }
+}
+
+@media (max-width: 570px) {
+
+    .feedback-form {
+        height: 50%;
+    }
+
+    .form-data {
+        flex-direction: column;
+    }
+
+    .form-left, .form-right {
+        width: 100%;
+    }
+}

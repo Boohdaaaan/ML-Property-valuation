@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="icon" type="image/x-icon" href="static/img/house.png">
+    <script src="https://kit.fontawesome.com/520d97e096.js" crossorigin="anonymous"></script>
+    {% block head %} {% endblock %}
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header" id="header">
+            <div class="header-content">
+                <a href="{{ url_for('main_page')}}"><img src="static/img/house.png"></a>
+                <a href="{{ url_for('about')}}">Про проєкт</a>
+                <a href="https://t.me/FlatPriceUABot" target="_blank">Тг-бот</a>
+                <a href="{{ url_for('feedback')}}">Зворотній зв'язок</a>
+<!--                <div class="theme-switch">-->
+<!--                    <input type="checkbox" class="checkbox" id="checkbox">-->
+<!--                    <label for="checkbox" class="checkbox-label">-->
+<!--                        &lt;!&ndash; <i class="fas fa-moon"></i>-->
+<!--                        <i class="fas fa-sun"></i> &ndash;&gt;-->
+<!--                        <span class="ball"></span>-->
+<!--                    </label>-->
+<!--                </div>-->
+            </div>
+        </div>
+
+        <div class="main">
+            {% block main %} {% endblock %}
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-house-block">
+                    <img src="static/img/house.png" alt="House" class="house-img">
+                    <a href="#header" class="animation">
+                        <div class="scroll-top"><i class="arrow-to-top"></i></div>
+                    </a>
+                </div>
+
+                <div class="footer-text-block">
+                    <a href="{{ url_for('feedback')}}">
+                        <p>Зворотній зв'язок</p>
+                    </a>
+                    <a href="https://t.me/FlatPriceUABot" target="_blank">
+                        <p>Телеграм-бот</p>
+                    </a>
+                    <a href="{{ url_for('about')}}">
+                        <p>Про проєкт</p>
+                    </a>
+                    <ul>
+                        <li><a href="https://github.com/Boohdaaaan" target="_blank"><img
+                                    src="static/img/GitHub.png"></a></li>
+                        <li><a href="mailto:bohdan1404@gmail.com?" target="_blank"><img src="static/img/gmail.png"></a>
+                        </li>
+                        <li><a href="https://www.kaggle.com/boohdaaaan" target="_blank"><img
+                                    src="static/img/kaggle.png"></a></li>
+                        <li><a href="https://t.me/boohdaaaan" target="_blank"><img src="static/img/telegram.png"></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-right-part">
+                    <p>Оцінка нерухомості - процес визначення вартості об'єкта або окремих прав щодо об'єкта
+                        нерухомості, що оцінюється. Оцінка вартості нерухомості включає: визначення вартості права
+                        власності чи інших прав, наприклад, права оренди, права користування тощо.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

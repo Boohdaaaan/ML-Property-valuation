@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="static/css/form.css">
+{% endblock %}
+
+{% block title %} Головна {% endblock %}
+
+{% block main %}
+<div class="block-form">
+    <h2>Оцінка квартири онлайн</h2>
+    <p class="form-text">Заповність форму нижче, щоб дізнатись орієнтовну ціну квартири.</p>
+    <form method="POST" action="/" autocomplete="off">
+        {{ form.hidden_tag() }}
+        <p>{{ form.city(placeholder='Населений пункт', id='inputField')}}</p>
+        <div class="custom-datalist" id="customDatalist">
+            {% for city in cities %}
+            <span>{{ city }}</span>
+            {% endfor %}
+        </div>
+        <p>{{ form.area(size=20, placeholder="Площа, м²") }}</p>
+        <p>{{ form.rooms() }}</p>
+        <p>{{ form.floor() }}</p>
+        <input type="submit" value="Розрахувати">
+        {% if form.area.errors %}
+        {% for error in form.area.errors %}
+        <div class="validator-error">
+            <span>{{ error }}</span>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% if form.city.errors %}
+        {% for error in form.city.errors %}
+        <div class="validator-error">
+            <span>{{ error }}</span>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </form>
+
+    {% if predicted_value %}
+    <div class="block-result">
+        <div class="result-text">
+            <div class="result-circle"><img src="static/img/apartment1.png" alt="apartment"></div>
+            <div class="result-text-result">
+                <p>Ціна за об'єкт:</p>
+                <h2>${{ full_price }}</h2>
+            </div>
+        </div>
+
+        <div class="result-text">
+            <div class="result-circle"><img src="static/img/m2.png" alt="m²"></div>
+            <div class="result-text-result">
+                <p>Ціна за м²:</p>
+                <h2>${{ predicted_value }}</h2>
+            </div>
+
+        </div>
+    </div>
+    {% endif %}
+
+    <img src="static/img/city.png" alt="City">
+</div>
+
+<div class="info-block">
+    <div class="info-block-text">
+        <h3>Алгоритм розрахунку</h3>
+        <p>Розрахунок здійснюється за допомогою моделі машинного навчання, навченної на десятках тисяч пропозицій
+            продажу нерухомості на вторинному ринку України.</p>
+    </div>
+    <div class="info-block-text">
+        <h3>Точність оцінки</h3>
+        <p>Результат оцінки є досить точним лише для середньо<wbr>статистичних квартир, оскільки модель не враховує якість ремонту,
+            планування, тип будівлі, тощо.</p>
+    </div>
+
+</div>
+
+<script>
+    var inputField = document.getElementById("inputField");
+    var customDatalist = document.getElementById("customDatalist");
+    var spans = customDatalist.getElementsByTagName("span");
+    var inputFieldWidth = inputField.offsetWidth;
+
+    customDatalist.style.width = inputFieldWidth + 'px';
+
+    inputField.addEventListener("input", function () {
+        var inputValue = inputField.value;
+
+        var hasMatches = false;
+
+        for (var i = 0; i < spans.length; i++) {
+            var span = spans[i];
+            var spanValue = span.textContent;
+
+            if (spanValue.toLowerCase().startsWith(inputValue.toLowerCase())) {
+                var start = spanValue.indexOf(inputValue);
+                var end = start + inputValue.length;
+                var matchedText = spanValue.substring(start, end);
+                var remainingText = spanValue.substring(end);
+                span.innerHTML = spanValue.replace(matchedText, '<strong>' + matchedText + '</strong>');
+                span.style.display = "block";
+                hasMatches = true;
+            } else {
+                span.style.display = "none";
+            }
+        }
+
+        if (hasMatches) {
+            customDatalist.style.display = "block";
+        } else {
+            customDatalist.style.display = "none";
+        }
+    });
+
+    inputField.addEventListener("focus", function () {
+        if (inputField.value !== "") {
+            customDatalist.style.display = "block";
+        }
+    });
+
+    document.addEventListener("click", function (event) {
+        var targetElement = event.target;
+        var isInputField = targetElement === inputField;
+        var isDatalistSpan = targetElement.tagName === "SPAN" && targetElement.parentElement === customDatalist;
+
+        if (!isInputField && !isDatalistSpan) {
+            customDatalist.style.display = "none";
+        }
+    });
+
+    customDatalist.addEventListener("click", function (event) {
+        var selectedSpan = event.target;
+        if (selectedSpan.tagName === "SPAN") {
+            inputField.value = selectedSpan.textContent;
+            customDatalist.style.display = "none";
+        }
+    });
+</script>
+
+{% endblock %}
