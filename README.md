@@ -26,7 +26,7 @@ Before training the XGBoost model, the data underwent thorough preprocessing.
 In this project, I employed the XGBoost machine learning model.  
 To optimize the model's performance and achieve the best results, I used the Optuna library for hyperparameters tuning. This process allowed me to fine-tune the model on optimal hyperparameters, leading to improved prediction quality.
 
-## Docker
+### Docker
 For a convenient deployment in the future, I used Docker Compose. My project has two Dockerfiles and a docker-compose.yml.
 Dockerfile create docker image, define settings and environments inside a container.
 docker-compose.yml defines the services to be started, environment and network settings.
@@ -59,7 +59,7 @@ ____
 У цьому проекті я використовував алгоритм машинного навчання XGBoost.
 Щоб покращити точність моделі, я використовував бібліотеку Optuna для налаштування гіперпараметрів. Цей процес дозволив мені обрати оптимальні гіперпараметри, що призвело до покращення якості прогнозу.
 
-## Docker
+### Docker
 Для зручного деплою у майбутньому я використав Docker Compose. У проекті є два Dockerfile та docker-compose.yml.
 Dockerfile створює docker-образ, визначає налаштування та оточення всередині контейнера.
 docker-compose.yml визначає служби які мають бути запущені, налаштування оточення та мережі.
