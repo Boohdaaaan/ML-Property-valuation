@@ -13,9 +13,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 model = joblib.load('models/xgb_v1.joblib')
-
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '12345'
 
 
 @app.route('/badrequest400')
