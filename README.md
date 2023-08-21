@@ -30,7 +30,19 @@ To optimize the model's performance and achieve the best results, I used the Opt
 For a convenient deployment in the future, I used Docker Compose. My project has two Dockerfiles and a docker-compose.yml.
 Dockerfile create docker image, define settings and environments inside a container.
 docker-compose.yml defines the services to be started, environment and network settings.
-____
+
+# Screenshots
+### Main page: predicting real estate prices.
+![main page](screenshots/main.png)
+
+### Complete the form below to receive an estimate of the apartment's cost.
+![prediction form](screenshots/form.png)
+
+### Have a look at the price prediction.
+![Predicted result](screenshots/predict.png)
+
+### Contact form for your questions and suggestions!
+![Contact form](screenshots/contact.png)
 
 # Прогнозування цін на нерухомість в Україні
 Ласкаво прошу до мого пет-проєкту! Цей проєкт є веб-додатком та телеграм-ботом із інтегрованою моделлю машинного навчання. Модель на основі XGBoost дозволяє прогнозувати вартість квартир у різних містах України за такими ознаками як місто, регіон, район, поверх і кількість кімнат.
@@ -63,3 +75,16 @@ ____
 Для зручного деплою у майбутньому я використав Docker Compose. У проекті є два Dockerfile та docker-compose.yml.
 Dockerfile створює docker-образ, визначає налаштування та оточення всередині контейнера.
 docker-compose.yml визначає служби які мають бути запущені, налаштування оточення та мережі.
+
+# Скріншоти
+### Головна: прогнозування цін на нерухомість.
+![main page](screenshots/main.png)
+
+### Заповніть форму нижче, щоб дізнатись орієнтовну ціну квартири.
+![prediction form](screenshots/form.png)
+
+### Ознайомтесь з прогнозом.
+![Predicted result](screenshots/predict.png)
+
+### Форма зв'язку для ваших запитань та пропозицій!
+![Contact form](screenshots/contact.png)
